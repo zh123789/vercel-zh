@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quan 的博客</title>
+  <meta name="description" content="个人技术与随笔博客模板 — 纯 HTML 单页" />
+  <style>
+    :root{
+      --bg:#f7f7f8;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --radius:10px;
+      --maxw:980px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f3f4f6, #f7f7f8);
+      color:#111827;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{
+      max-width:var(--maxw);
+      margin:36px auto;
+      padding:20px;
+    }
+    header.site{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:20px;
+      box-shadow:0 6px 18px rgba(37,99,235,0.12);
+    }
+    h1.site-title{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-0.2px;
+    }
+    nav.main-nav a{
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:14px;
+      font-size:14px;
+    }
+    .layout{
+      display:grid;
+      grid-template-columns: 1fr 300px;
+      gap:24px;
+      align-items:start;
+    }
+    main.feed{
+      min-width:0;
+    }
+    article.post{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      margin-bottom:18px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.04);
+    }
+    .post h2{
+      margin:0 0 8px 0;
+      font-size:18px;
+    }
+    .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    .excerpt{
+      margin:0 0 12px 0;
+      color:#374151;
+    }
+    .read-more{
+      display:inline-block;
+      padding:8px 12px;
+      background:transparent;
+      border:1px solid #e6eefc;
+      color:var(--accent);
+      border-radius:8px;
+      text-decoration:none;
+      font-size:13px;
+    }
+    aside.sidebar{
+      position:relative;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:16px;
+      margin-bottom:16px;
+      box-shadow:0 6px 18px rgba(15,23,42,0.04);
+    }
+    .search input{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #e6e9ef;
+      font-size:14px;
+    }
+    .tags a{
+      display:inline-block;
+      margin:6px 6px 0 0;
+      padding:6px 8px;
+      background:#f1f5f9;
+      color:#0f172a;
+      border-radius:8px;
+      font-size:13px;
+      text-decoration:none;
+    }
+    footer.site-footer{
+      margin-top:28px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    /* Responsive */
+    @media (max-width:900px){
+      .layout{grid-template-columns:1fr}
+      .sidebar{order:2}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Q</div>
+        <div>
+          <h1 class="site-title">Quan 的博客</h1>
+          <div style="color:var(--muted);font-size:13px">技术随笔 · 工具 · 读书笔记</div>
+        </div>
+      </div>
+      <nav class="main-nav" role="navigation" aria-label="主导航">
+        <a href="#home">首页</a>
+        <a href="#about">关于</a>
+        <a href="#tags">标签</a>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <main class="feed" role="main" aria-live="polite">
+        <!-- Post 1 -->
+        <article class="post" id="post-1" itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <h2 itemprop="headline">如何用纯 HTML 快速搭建个人博客</h2>
+            <div class="meta">
+              <time datetime="2026-03-01" itemprop="datePublished">2026-03-01</time> · 作者 <span itemprop="author">quan</span>
+            </div>
+          </header>
+          <p class="excerpt" itemprop="description">介绍一个无需后端、仅用静态 HTML/CSS 的博客结构，适合托管在任意静态站点服务上。</p>
+          <a class="read-more" href="#post-1-full" aria-label="阅读全文">阅读全文</a>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="post" id="post-2" itemscope itemtype="http://schema.org/BlogPosting">
+          <header>
+            <h2 itemprop="headline">前端性能优化的 7 个实用技巧</h2>
+            <div class="meta">
+              <time datetime="2026-02-20" itemprop="datePublished">2026-02-20</time> · 作者 <span itemprop="author">quan</span>
+            </div>
+          </header>
+          <p class="excerpt" itemprop="description">从资源加载、缓存策略到图片优化，列出可立即落地的优化方法。</p>
+          <a class="read-more" href="#post-2-full" aria-label="阅读全文">阅读全文</a>
+        </article>
+
+        <!-- 可扩展的占位区域 -->
+        <article class="post" id="post-3">
+          <header>
+            <h2>示例文章标题</h2>
+            <div class="meta">2026-01-10 · 作者 quan</div>
+          </header>
+          <p class="excerpt">这是一个示例文章摘要。将来可以替换为真实内容或通过脚本注入更多文章。</p>
+          <a class="read-more" href="#post-3-full">阅读全文</a>
+        </article>
+      </main>
+
+      <aside class="sidebar" role="complementary">
+        <section class="card search" aria-label="站内搜索">
+          <label for="q" style="display:block;color:var(--muted);font-size:13px;margin-bottom:8px">搜索文章</label>
+          <input id="q" type="search" placeholder="输入关键词（仅示例）" />
+        </section>
+
+        <section class="card about" id="about">
+          <h3 style="margin-top:0;margin-bottom:8px">关于我</h3>
+          <p style="margin:0;color:#374151;font-size:14px">你好，我是 quan，喜欢研究前端、系统与工具链。这里记录学习笔记与实践心得。</p>
+        </section>
+
+        <section class="card" id="tags">
+          <h3 style="margin-top:0;margin-bottom:8px">热门标签</h3>
+          <div class="tags" aria-hidden="false">
+            <a href="#tag-frontend">前端</a>
+            <a href="#tag-devops">DevOps</a>
+            <a href="#tag-notes">读书笔记</a>
+            <a href="#tag-tools">工具</a>
+          </div>
+        </section>
+
+        <section class="card" aria-label="订阅">
+          <h3 style="margin-top:0;margin-bottom:8px">订阅</h3>
+          <p style="margin:0 0 10px 0;color:var(--muted);font-size:13px">将此 HTML 放到静态托管服务并配合 RSS/邮件工具即可实现订阅。</p>
+          <a class="read-more" href="#subscribe">了解如何订阅</a>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="site-footer" role="contentinfo">
+      <div>© 2026 Quan · 采用纯静态 HTML 模板</div>
+    </footer>
+  </div>
+</body>
+</html>
